@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>Informe Ventas Distribuido</title>
+			<meta charset="utf-8">
+			<link rel="stylesheet" href="includes/css/bootstrap.min.css" crossorigin="anonymous">
+			<link rel="stylesheet" href="includes/CSS/jquery-ui.min.css" type="text/css" />
+			<link rel="stylesheet" href="includes/CSS/jquery-ui.theme.css" type="text/css" />
+			<link rel="stylesheet" href="includes/CSS/informe_ventas.css" type="text/css" />
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Marca</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+	  	<div class="container-fluid">
+	  	  	<div class="row">
+		  	    <div class="col-xs-0 col-sm-3 col-md-3 col-lg-3">
+
+		  	    </div>
+		  	    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		  	      	<h1 class="text-center">Loyalty points</h1>
+		  	    </div>
+		  	    <div class="col-xs-0 col-sm-3 col-md-3 col-lg-3">
+
+		  	    </div>
+		  	  </div>
+
+		  	  <div class="row">
+		  	    <div class="col-xs-0 col-sm-3 col-md-3 col-lg-3">
+
+		  	    </div>
+		  	    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		  	      <h3 id="selectQuoteLabel" class="text-center">Please Select the month you want to review</h3>
+		  	    </div>
+		  	    <div class="col-xs-0 col-sm-3 col-md-3 col-lg-3">
+
+		  	    </div>
+		  	  </div>
+		  	  <div class="row">
+		  	    <div class="col-xs-0 col-sm-4 col-md-4 col-lg-4">
+		  	    </div>
+		  	    <div class="col-xs-12col-sm-4 col-md-4 col-lg-4">
+		  	      <div class="row center-block">
+		  	      	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		  	      		<select class="form-control">
+						    <option>January</option>
+						    <option>February</option>
+						    <option>March</option>
+						    <option>April</option>
+						    <option>May</option>
+						    <option>June</option>
+						    <option>July</option>
+						    <option>August</option>
+						    <option>September</option>
+						    <option>October</option>
+						    <option>November</option>
+						    <option>December</option>
+						</select>
+		  	      	</div>
+		  	      	<!--
+		  	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		  	          <div class="dropdown">
+						  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Month
+						  <span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#">January</a></li>
+						    <li><a href="#">February</a></li>
+						    <li><a href="#">March</a></li>
+						    <li><a href="#">April</a></li>
+						    <li><a href="#">May</a></li>
+						    <li><a href="#">June</a></li>
+						    <li><a href="#">July</a></li>
+						    <li><a href="#">August</a></li>
+						    <li><a href="#">September</a></li>
+						    <li><a href="#">October</a></li>
+						    <li><a href="#">November</a></li>
+						    <li><a href="#">December</a></li>
+						  </ul>
+						</div>
+		  	        </div>
+		  	        -->
+		  	      </div>
+		  	    </div>
+		  	    <div class="col-xs-0 col-sm-4 col-md-4 col-lg-4">
+		  	    </div>
+		  	  </div>
+		  	  <div class="row">
+		  	    <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+		  	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		  	      <div class="jumbotron">
+		  	      	<!--Table Based On DATA-->
+		  	   		<div id="reportTable" class="component"></div>
+		  	   		<!--Table Based On DATA-->
+		  	       	<div id="countryTotal"></div>
+		  	      </div>
+		  	    </div>
+		  	    <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+		  	  </div>
+		  	</div>
+	  	</div>
+		<!-- Modal -->
+	    <div class="modal fade" id="pieModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	      <div class="modal-dialog modal-lg" role="document">
+	        <div class="modal-content">
+	          <div class="modal-header">
+	            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	            <h4 class="modal-title" id="myModalLabel">Ciudad Seleccionada</h4>
+	          </div>
+	          <div class="modal-body" id="ModalBody">
+	            
+	          </div>
+  		</div>	
+		<script type='text/javascript' src='includes/JS/jquery-2.2.0.min.js'></script>
+		<script type='text/javascript' src='includes/JS/jquery-ui.min.js'></script>
+		<script type='text/javascript' src='includes/JS/d3-jetpack.js'></script>
+		<script src="includes/JS/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="includes/JS/d3.min.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    $(".dropdown-toggle").dropdown();
+			});
+		</script>
+		<script src="includes/JS/jquery.ba-throttle-debounce.min.js" charset="utf-8"></script>
+		<script src="includes/JS/jquery.stickyheader.js" charset="utf-8"></script>
+	</body>
+</html>
